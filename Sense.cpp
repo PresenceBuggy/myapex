@@ -40,16 +40,39 @@ public:
                 continue;
             if (player->getTeamNumber() == m_localPlayer->getTeamNumber())
                 continue;
-            if (player->isVisible())
-            {
-                player->setGlowEnable(5);
-                player->setGlowThroughWall(1);
-            }
+
+            //if (player->isVisible()){
+
+                player->setCustomGlow();
+                player->setCustomGlowWhite();
+
+                if(player->getShieldValue() <= 10){
+                    player->setCustomGlowGreen();
+                } else
+
+                if(player->getShieldValue() <= 50){
+                    player->setCustomGlowWhite();
+                } else
+
+                if(player->getShieldValue() <= 75){
+                    player->setCustomGlowBlue();
+                } else
+
+                if(player->getShieldValue() <= 100){
+                    player->setCustomGlowPurple();
+                } else
+
+                if(player->getShieldValue() <= 125){
+                    player->setCustomGlowRed();
+                }
+
+                
+            /*}
             else
             {
-                player->setGlowEnable(7);
-                player->setGlowThroughWall(2);
-            }
+                player->setCustomGlow();
+                player->setCustomGlowRed();
+            } */
         }
     }
 };
