@@ -1,12 +1,18 @@
+Original author/forked from: https://github.com/arturzxc/myapex.
+
 # MyApex
 Simple C++ cheats for Apex Legends (Linux Steam version).
 
 ### Sense 
-10 shield points or less. -> green color (enemy almost cracked, good to push).
-50 shield points. -> white color.
-75 shield points. -> blue color.
-100 shield points. -> purple color.
-125 shield points. -> red color.
+10 shield points or less. -> green color (enemy almost cracked, good to push);
+
+50 shield points. -> white color;
+
+75 shield points. -> blue color;
+
+100 shield points. -> purple color;
+
+125 shield points. -> red color;
 
 ### NoRecoil
 Adjustable reduction in vertical and horizontal weapon recoil.
