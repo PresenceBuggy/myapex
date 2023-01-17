@@ -143,8 +143,9 @@ public:
         return m_aimbotTrigger;
     }
     int getAimbotSmoothing()
-    {
-        return m_aimbotSmoothing;
+    {	
+
+        return (double)rand()/(RAND_MAX)+(rand()%40) + m_aimbotSmoothing;
     }
     int getAimbotActivationFOV()
     {
