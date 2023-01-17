@@ -2,8 +2,11 @@
 Simple C++ cheats for Apex Legends (Linux Steam version).
 
 ### Sense 
-Invisible enemies will be highlighted with Bloodhound Scan.
-Visible enemies will be highlighted using Caustic Vision.
+10 shield points or less -> green color (enemy almost cracked, good to push)
+50 shield points -> white color
+75 shield points -> blue color
+100 shield points -> purple color
+125 shield points -> red color.
 
 ### NoRecoil
 Adjustable reduction in vertical and horizontal weapon recoil.
@@ -23,7 +26,7 @@ Only works horizontally.
 1. Open terminal and run the following to download the cheat source code
 
 ```
-git clone git@github.com:arturzxc/myapex.git
+git clone https://github.com/luizpalazzo/myapex.git
 ```
 
 2. Go inside the downloaded folder
