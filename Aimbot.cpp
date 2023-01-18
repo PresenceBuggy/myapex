@@ -18,6 +18,7 @@ private:
     X11Utils *m_x11Utils;
 
     Player *m_lockedOnPlayer = nullptr;
+    Player *m_lockedOnPlayerBefore = nullptr;
 
 public:
     Aimbot(ConfigLoader *configLoader,
@@ -95,6 +96,11 @@ public:
                 m_lockedOnPlayer = findClosestEnemy();
             if (m_lockedOnPlayer == nullptr)
                 return;
+            
+            if(m_lockedOnPlayer != m_lockedOnPlayerBefore){
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+            }
+
             double distanceToTarget = math::calculateDistanceInMeters(m_localPlayer->getLocationX(),
                                                                       m_localPlayer->getLocationY(),
                                                                       m_localPlayer->getLocationZ(),
@@ -113,6 +119,8 @@ public:
                                                           m_lockedOnPlayer->getLocationX(),
                                                           m_lockedOnPlayer->getLocationY(),
                                                           m_lockedOnPlayer->getLocationZ());
+
+            m_lockedOnPlayerBefore = m_lockedOnPlayer;
         }
 
         // Setup Pitch
@@ -130,6 +138,10 @@ public:
             return;
         double newYaw = flipYawIfNeeded(yaw + (angleDelta / m_configLoader->getAimbotSmoothing()));
         m_localPlayer->setYaw(newYaw);
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(m_configLoader->getAimbotSleepTime()));
+
+
     }
     double flipYawIfNeeded(double angle)
     {
