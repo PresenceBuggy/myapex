@@ -97,9 +97,11 @@ public:
             if (m_lockedOnPlayer == nullptr)
                 return;
             
-            if(m_lockedOnPlayer != m_lockedOnPlayerBefore){
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-            }
+            //This is to avoid to the aim jump from an enemy to another, but not sure if is working good
+
+            //if(m_lockedOnPlayer != m_lockedOnPlayerBefore){
+            //   std::this_thread::sleep_for(std::chrono::seconds(1));
+            //}
 
             double distanceToTarget = math::calculateDistanceInMeters(m_localPlayer->getLocationX(),
                                                                       m_localPlayer->getLocationY(),
